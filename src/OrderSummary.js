@@ -22,8 +22,8 @@ const OrderSummary = ({ order, updateQuantity, removeItem }) => {
           </li>
         ))}
       </ul>
-      <div className="alert alert-primary mt-4 text-center" role="alert">
-      <h3>Total: SEK {total.toFixed(2)}</h3>
+      <div className="total-box mt-4 text-center">
+        <h3>Total: SEK {total.toFixed(2)}</h3>
       </div>
     </div>
   );
