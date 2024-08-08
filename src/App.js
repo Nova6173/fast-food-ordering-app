@@ -57,7 +57,17 @@ const App = () => {
   return (
     <div className={darkMode ? 'app dark-mode' : 'app'}>
       <Header />
-      <button onClick={toggleTheme}>{darkMode ? 'Light' : 'Dark'} Mode</button>
+      <button
+      style={{
+        borderRadius: '8px',
+        padding: '5px',
+        backgroundColor: darkMode ? 'black' : 'white',
+        color: darkMode ? 'white' : 'black',
+      }}
+      onClick={toggleTheme}
+     >
+     {darkMode ? 'Light' : 'Dark'} Mode
+     </button>
       <Menu items={items} addToOrder={addToOrder} />
       <OrderSummary order={order} updateQuantity={updateQuantity} removeItem={removeItem} />
     </div>
