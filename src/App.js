@@ -18,7 +18,7 @@ const App = () => {
   ]);
 
   const [order, setOrder] = useState([]);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   const addToOrder = (item) => {
     setOrder(prevOrder => {
@@ -53,15 +53,16 @@ const App = () => {
   const toggleTheme = () => {
     setDarkMode(!darkMode);
   };
-
+  
   return (
     <div className={darkMode ? 'app dark-mode' : 'app'}>
-      <Header />  {}
+      <Header />
       <button onClick={toggleTheme}>{darkMode ? 'Light' : 'Dark'} Mode</button>
       <Menu items={items} addToOrder={addToOrder} />
       <OrderSummary order={order} updateQuantity={updateQuantity} removeItem={removeItem} />
     </div>
   );
+  
 };
 
 export default App;

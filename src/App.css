@@ -19,6 +19,9 @@
 .app {
     padding: 20px;
     font-family: Arial, sans-serif;
+    background-color: white; 
+  color: black; 
+
   }
   
   .dark-mode {
