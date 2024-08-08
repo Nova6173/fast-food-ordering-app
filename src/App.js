@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Menu from './Menu';
 import OrderSummary from './OrderSummary';
+import Header from './Header';
 import './App.css';
 
 const App = () => {
@@ -16,7 +17,6 @@ const App = () => {
     { id: 8, name: 'All you can eat menu', description: 'All you can eat menu', price: 20.00, image: 'all-you-can-eat-image-url' },
   ]);
 
-  
   const [order, setOrder] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
 
@@ -56,6 +56,7 @@ const App = () => {
 
   return (
     <div className={darkMode ? 'app dark-mode' : 'app'}>
+      <Header />  {}
       <button onClick={toggleTheme}>{darkMode ? 'Light' : 'Dark'} Mode</button>
       <Menu items={items} addToOrder={addToOrder} />
       <OrderSummary order={order} updateQuantity={updateQuantity} removeItem={removeItem} />
