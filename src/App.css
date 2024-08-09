@@ -85,4 +85,10 @@
   button:hover {
     cursor: pointer;
   }
+
+  .dark-mode .menu-item, .dark-mode .list-group-item {
+    background-color: #444;
+    color: white;
+    border: 1px solid #555;
+  }
   
