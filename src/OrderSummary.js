@@ -9,16 +9,16 @@ const OrderSummary = ({ order, updateQuantity, removeItem }) => {
       <h2>Your Order</h2>
       <ul className="list-group">
         {order.map(item => (
-          <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center">
-            <div>
+          <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '100px' }}>
+            <div style={{ flex: '1' }}>
               {item.name} x {item.quantity}
             </div>
-            <div>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', flexShrink: 0 }}>
               <button className="btn btn-success btn-sm mx-1" onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
               <button className="btn btn-danger btn-sm mx-1" onClick={() => updateQuantity(item.id, item.quantity - 1)}>-</button>
               <button className="btn btn-secondary btn-sm mx-1" onClick={() => removeItem(item.id)}>Remove</button>
             </div>
-            <span>SEK {(item.quantity * item.price).toFixed(2)}</span>
+            <span style={{ marginLeft: '10px', flexShrink: 0 }}>SEK {(item.quantity * item.price).toFixed(2)}</span>
           </li>
         ))}
       </ul>
